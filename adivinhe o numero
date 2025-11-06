@@ -1,0 +1,36 @@
+<?php
+
+    $numeroSecreto = random_int(1, 50);
+    $pontos = 0;
+    $chances = 5;
+
+    print("Você possui: $chances chances\n\n");
+
+    do{
+      
+        $chute = (int) readline("Digite um valor: ");
+
+        if($chute == $numeroSecreto)
+        {
+            print("\033[32m\nVocê acertou!\033[0m\n");
+            $pontos = $pontos + 10;
+
+        }elseif ($chute > $numeroSecreto)
+        {
+            print("\033[31mValor muito alto\033[0m\n\n");
+            $chances = $chances - 1;
+            print("Você possui: $chances chances\n");
+            $pontos = $pontos - 5;
+        }else{
+            print("\033[31mValor muito baixo\033[0m\n\n");
+            $chances = $chances - 1;
+            $pontos = $pontos - 5;
+            print("Você possui: $chances chances\n\n");
+        }
+
+        if($vidas == 0){
+            print("\033[31m Você morreu!! \033[0m\n\n");
+        }
+    }while ($chute != $numeroSecreto && $chances != 0);
+
+    print("\nTotal de pontos: $pontos\n");
