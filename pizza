@@ -1,0 +1,13 @@
+<?php
+    $Adultos = readline("Digite quantos adultos iram na festa: ");
+    $Criancas = readline("Digite quantas crianças iram na festa: ");
+
+    $Pedaços = ($Adultos * 3) + ($Criancas * 2);
+
+    $pizzas = ceil($Pedaços / 8);
+
+    if ($pizzas == 1) {
+        print("\nSerá necessário comprar " . $pizzas . " pizza para a festa.\n");
+    }else {
+        print("\nSerá necessário comprar " . $pizzas . " pizzas para a festa.\n");
+    }
